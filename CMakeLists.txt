@@ -29,12 +29,18 @@ link_directories($ENV{CUDNN_PATH}/lib64)
 link_directories($ENV{CUDNN_PATH}/lib)
 endif()
 
-add_executable(Samples samples/conv_sample.cpp 
-                       samples/test_list.cpp 
-                       samples/fp16_emu.cpp 
+# add_executable(Samples samples/conv_sample.cpp 
+#                        samples/test_list.cpp 
+#                        samples/fp16_emu.cpp 
+#                        samples/catch.cpp 
+#                        samples/helpers.cpp 
+#                        samples/fusion_sample.cpp 
+#                        samples/mha_sample.cpp)
+
+add_executable(Samples samples/test_list.cpp 
                        samples/catch.cpp 
+                       samples/fp16_emu.cpp 
                        samples/helpers.cpp 
-                       samples/fusion_sample.cpp 
                        samples/mha_sample.cpp)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
